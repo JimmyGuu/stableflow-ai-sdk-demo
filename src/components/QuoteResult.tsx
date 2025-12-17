@@ -35,7 +35,7 @@ export const QuoteResult: React.FC<QuoteResultProps> = ({
           const isSelected = selectedQuote?.serviceType === quote.serviceType;
           const quoteData = quote.quote?.quote || quote.quote?.data;
           const outputAmount = quoteData?.amountOutFormatted || quote.quote?.outputAmount || 'N/A';
-          const fees = quote.quote?.fees || {};
+          // const fees = quote.quote?.fees || {};
           const totalFees = quote.quote?.totalFeesUsd || '0';
           const estimateTime = quote.quote?.estimateTime || quoteData?.timeEstimate || 'N/A';
 

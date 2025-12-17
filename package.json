@@ -35,6 +35,7 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
+    "@types/big.js": "^6.2.2",
     "@types/node": "^22.0.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
