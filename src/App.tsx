@@ -12,6 +12,7 @@ import Big from 'big.js';
 import './App.css';
 
 import { SFA, OpenAPI, GetAllQuoteParams } from 'stableflow-ai-sdk';
+import { useAccount } from 'wagmi';
 // Configure SDK
 OpenAPI.BASE = import.meta.env.VITE_STABLEFLOW_API_URL || 'https://api.stableflow.ai';
 const JWT_TOKEN = import.meta.env.VITE_STABLEFLOW_JWT_TOKEN;
@@ -40,6 +41,7 @@ function App() {
   const fromChainConfig = fromChain ? getChainByKey(fromChain) : null;
   const toChainConfig = toChain ? getChainByKey(toChain) : null;
 
+  const evmAccount = useAccount();
   const { wallet: fromWallet, switchNetwork } = useWallet(fromChainConfig);
 
   const handleGetQuote = async () => {
@@ -181,7 +183,16 @@ function App() {
       <main className="app-main">
         <div className="bridge-form">
           <div className="form-section">
-            <h2>From</h2>
+            <h2 className="wallet-connected">
+              <div>From</div>
+              {
+                fromChainConfig?.chainType === "evm" && (
+                  <div className="status-success">
+                    EVM Network: {evmAccount?.chain?.name || "Unknown"}
+                  </div>
+                )
+              }
+            </h2>
             <ChainSelector
               label="From Chain"
               value={fromChain}
@@ -226,7 +237,7 @@ function App() {
           </div>
 
           <div className="form-section">
-            <label>Amount (USDT)</label>
+            <label>Amount ({fromChainConfig?.symbol})</label>
             <input
               type="number"
               value={amount}
@@ -242,11 +253,23 @@ function App() {
 
           <div className="form-actions">
             <button
-              onClick={handleGetQuote}
+              onClick={() => {
+                if (fromChainConfig?.chainType === "evm" && evmAccount && evmAccount.chainId !== fromChainConfig?.chainId) {
+                  switchNetwork(getChainByKey(fromChain!)!);
+                  return;
+                }
+                handleGetQuote();
+              }}
               disabled={loading || !fromChain || !toChain || !amount || !fromWalletAddress}
               className="btn-primary"
             >
-              {loading ? 'Getting Quote...' : 'Get Quote'}
+              {
+                fromChainConfig?.chainType === "evm" && evmAccount && evmAccount.chainId !== fromChainConfig?.chainId ? (
+                  `Switch Network to ${fromChainConfig?.chainName}`
+                ) : (
+                  loading ? 'Getting Quote...' : 'Get Quote'
+                )
+              }
             </button>
             {selectedQuote && (
               <>
