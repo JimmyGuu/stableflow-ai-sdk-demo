@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useWallet } from '../hooks/useWallet';
-import { TokenConfig } from 'stableflow-ai-sdk';
+import { TokenConfig } from '@jimmygu/sfa-sdk-test';
 
 interface WalletConnectorProps {
   chain: TokenConfig;

@@ -7,7 +7,7 @@ import {
 } from "@near-wallet-selector/modal-ui";
 import { setupMeteorWallet } from "@near-wallet-selector/meteor-wallet";
 import useWalletsStore from "../stores/use-wallets";
-import { NearWallet } from 'stableflow-ai-sdk';
+import { NearWallet } from '@jimmygu/sfa-sdk-test';
 
 import "@near-wallet-selector/modal-ui/styles.css";
 

@@ -5,7 +5,7 @@ import WalletSelector from "./components/wallet-selector";
 import { OkxWalletAdapter, TronLinkAdapter } from "@tronweb3/tronwallet-adapters";
 import { useWalletSelector } from "./hooks/use-wallet-selector";
 
-import { TronWallet } from 'stableflow-ai-sdk';
+import { TronWallet } from '@jimmygu/sfa-sdk-test';
 
 const wallets = [new TronLinkAdapter(), new OkxWalletAdapter()];
 

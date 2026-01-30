@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { tokens } from 'stableflow-ai-sdk';
+import { tokens } from '@jimmygu/sfa-sdk-test';
 
 interface ChainSelectorProps {
   label: string;

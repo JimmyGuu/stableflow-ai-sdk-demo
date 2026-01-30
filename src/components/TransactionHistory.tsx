@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTransactionStore } from '../stores/transactionStore';
 
-import { SFA } from 'stableflow-ai-sdk';
+import { SFA } from '@jimmygu/sfa-sdk-test';
 
 export const TransactionHistory: React.FC = () => {
   const { transactions, updateTransaction } = useTransactionStore();

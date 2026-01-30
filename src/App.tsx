@@ -11,7 +11,7 @@ import Big from 'big.js';
 
 import './App.css';
 
-import { SFA, OpenAPI, GetAllQuoteParams } from 'stableflow-ai-sdk';
+import { SFA, OpenAPI, GetAllQuoteParams } from '@jimmygu/sfa-sdk-test';
 import { useAccount } from 'wagmi';
 // Configure SDK
 OpenAPI.BASE = import.meta.env.VITE_STABLEFLOW_API_URL || 'https://api.stableflow.ai';

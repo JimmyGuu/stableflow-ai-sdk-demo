@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import useWalletsStore from '@/stores/use-wallets';
-import { TokenConfig } from 'stableflow-ai-sdk';
+import { TokenConfig } from '@jimmygu/sfa-sdk-test';
 import { useSwitchChain } from 'wagmi';
 
 interface UseWalletResult {

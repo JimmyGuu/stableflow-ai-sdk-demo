@@ -1,5 +1,5 @@
 // Chain and USDT configuration based on SDK configs
-import { tokens, TokenConfig } from 'stableflow-ai-sdk';
+import { tokens, TokenConfig } from '@jimmygu/sfa-sdk-test';
 
 export const getChainByKey = (key: string): TokenConfig | undefined => {
   return tokens.find((token) => token.contractAddress === key);
