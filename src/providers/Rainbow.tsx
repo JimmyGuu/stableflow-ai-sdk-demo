@@ -30,7 +30,7 @@ import {
   useConnectModal
 } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
-import { EVMWallet, getRpcUrls } from '@jimmygu/sfa-sdk-test';
+import { EVMWallet, getRpcUrls } from 'stableflow-ai-sdk';
 import "@rainbow-me/rainbowkit/styles.css";
 import useWalletsStore from "@/stores/use-wallets";
 import { useDebounceFn } from "../hooks/useDebounceFn";

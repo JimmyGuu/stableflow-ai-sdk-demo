@@ -15,7 +15,7 @@ import useWalletsStore from "@/stores/use-wallets";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useDebounceFn } from "../hooks/useDebounceFn";
 
-import { SolanaWallet } from '@jimmygu/sfa-sdk-test';
+import { SolanaWallet } from 'stableflow-ai-sdk';
 
 export const adapters = [
   new PhantomWalletAdapter(),

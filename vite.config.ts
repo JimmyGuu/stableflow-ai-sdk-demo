@@ -31,6 +31,7 @@ export default defineConfig({
   },
   define: {
     'process.env': {},
+    "process.browser": "true",
     global: 'globalThis',
   },
   optimizeDeps: {

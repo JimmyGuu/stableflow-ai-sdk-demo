@@ -7,7 +7,7 @@ import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { useWalletSelector } from "./hooks/use-wallet-selector";
 import WalletSelector from "./components/wallet-selector";
 
-import { AptosWallet } from '@jimmygu/sfa-sdk-test';
+import { AptosWallet } from 'stableflow-ai-sdk';
 
 export default function AptosProvider({
   children

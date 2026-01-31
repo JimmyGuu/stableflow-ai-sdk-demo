@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTransactionStore } from '../stores/transactionStore';
 
-import { SFA } from '@jimmygu/sfa-sdk-test';
+import { SFA } from 'stableflow-ai-sdk';
 
 export const TransactionHistory: React.FC = () => {
   const { transactions, updateTransaction } = useTransactionStore();
@@ -101,7 +101,7 @@ export const TransactionHistory: React.FC = () => {
                   className="btn-remove"
                   disabled={loading[tx.id]}
                 >
-                  {loading[tx.id] ? "Loading..." : "Quote Result"}
+                  {loading[tx.id] ? "Loading..." : "Fetch Result"}
                 </button>
               )
             }

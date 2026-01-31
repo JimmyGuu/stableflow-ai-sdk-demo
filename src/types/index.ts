@@ -1,4 +1,4 @@
-import type { ServiceType, TokenConfig } from '@jimmygu/sfa-sdk-test';
+import type { ServiceType, TokenConfig } from 'stableflow-ai-sdk';
 
 export interface QuoteResult {
   serviceType: ServiceType;
