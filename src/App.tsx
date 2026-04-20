@@ -11,8 +11,16 @@ import Big from 'big.js';
 
 import './App.css';
 
-import { SFA, OpenAPI, GetAllQuoteParams } from 'stableflow-ai-sdk';
+import { SFA, OpenAPI, GetAllQuoteParams, setRpcUrls } from 'stableflow-ai-sdk';
 import { useAccount } from 'wagmi';
+
+const AlchemyRpcApiKey = import.meta.env.VITE_ALCHEMY_RPC_API_KEY;
+
+setRpcUrls({
+  "eth": [`https://eth-mainnet.g.alchemy.com/v2/${AlchemyRpcApiKey}`],
+  "sol": [`https://solana-mainnet.g.alchemy.com/v2/${AlchemyRpcApiKey}`],
+});
+
 // Configure SDK
 OpenAPI.BASE = import.meta.env.VITE_STABLEFLOW_API_URL || 'https://api.stableflow.ai';
 const JWT_TOKEN = import.meta.env.VITE_STABLEFLOW_JWT_TOKEN;
