@@ -185,7 +185,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>StableFlow Bridge Demo 2.0</h1>
-        <p>Cross-chain USDT bridge</p>
+        <p>Cross-chain stablecoins bridge</p>
       </header>
 
       <main className="app-main">
