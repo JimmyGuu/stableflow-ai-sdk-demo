@@ -23,7 +23,14 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
-      maxParallelFileOps: 2,
+      maxParallelFileOps: 1,
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        }
+      }
     }
   },
   resolve: {
